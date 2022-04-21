@@ -29,7 +29,7 @@ import com.google.gson.JsonObject;
 public class MainAPI {
 	
 	private static final String URL = "https://api.zalo.ai/v1/tts/synthesize";
-	private static final String APIKEY = "BteNwKa7jbIQ5EoNUNfl6TlEKlwcglrk";
+	private static final String APIKEY = "cxTHgE3ap8fQ4saSPTgrrn83zzJyVRiV";
 	private static final String SPEED = "1.2";
 
 	public static void main(String[] args) throws IOException {
@@ -38,23 +38,53 @@ public class MainAPI {
 		
 //		gencustom("Bia Corona Extra Chai 355ml TH24", "bia_corona_extra");
 
-//               String key="ProductId_";
-//               final String excelFilePath = "data_Import/book.xlsx";
-//               final List<model> list =readExcel(excelFilePath);
-//                //  String content="Bịch (5.5kg)";
-//               System.out.println(list.size());
-//               for (model sh : list) {
-//                   System.out.println(sh.getId()+" "+sh.getName());
-//                   int i=gencustom(sh.getName().trim(), key+sh.getId().trim());
-//                   if (i!=0) break;
-//                       
+                String folder="mp3/";
+//                
+////                
+               String key="productid_";
+               final String excelFilePath = "data_Import/book.xlsx";
+               final List<model> list =readExcel(excelFilePath);
+                //  String content="Bịch (5.5kg)";
+               System.out.println(list.size());
+               int d=0;
+               for (model sh : list) {
+                   d++;
+                   System.out.println(sh.getId()+" "+sh.getName());
+                   int i=gencustom(sh.getName ().trim(), folder+key+sh.getId().trim());
+                   if (i!=0) {
+                       d--;
+                       System.out.println("dem = "+d);
+                       break;
+                   }
+               }
+// check file
+//        String filePathString="D:\\Desktop\\doan\\BXH\\Project_MD\\MWG_testfull\\mp3\\";
+//        
+//                // check file exit
+//                boolean exists = false; 
+//                for (model sh : list) {
+//                    File f = new File(filePathString+key+sh.getId().trim()+".mp3");
+//                    if(f.exists() && !f.isDirectory()) { 
+//                        d++;
+//                    }
+//                    else 
+//                            System.out.println(sh.getId()+" "+sh.getName());
 //               }
-             
+//                System.out.println("d= "+d);
                 
-            //    gencustom("Túi 1.1 kg","QuantityUnit_"+"665");
-                gencustom("ki lô gam","QuantityUnit_"+"202");
-//                gencustom("Rổ 25 kg","QuantityUnit_"+"1284");
-//                gencustom("Rổ 20 kg","QuantityUnit_"+"1285");
+//                gencustom("Vui lòng cung cấp số điện thoại để tích điểm","sdt_tich_diem");
+          
+//                gencustom("ĐẬU ĐỎ Ki Lô Gam","dau_do_1233934000040");
+//                gencustom("XOÀI CÁT HÒA LỘC",key+"2701122045200");
+//                gencustom("CHUỐI GIÀ GIỐNG NAM MỸ",key+"2701122045600");
+//                gencustom("CỦ SẮN",key+"2701122045900");
+//                gencustom("NHÃN XUỒNG TÚI 1.1Ki Lô Gam",key+"test");
+//                gencustom("KHOAI LANG NHẬT",key+"2701122051300");
+//                gencustom("NHA ĐAM",key+"9932844000007");
+                
+//                gencustom("nước rửa tay laffair 500ml",folder+key+"9252834000023");
+//                gencustom("ddvspn dạ hương 100ml",folder+key+"9252834000098");
+//                gencustom("Bánh cracker hai lớp kem bơ Magic Twin hộp 300g",key+"8934564310409");
                 
                 
                 

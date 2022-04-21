@@ -65,11 +65,11 @@ public class importExcel {
         
         while (iterator.hasNext()) {
             Row nextRow = iterator.next();
-            if (nextRow.getRowNum() == 0) {
-                // Ignore header
-                continue;
-                
-            }
+//            if (nextRow.getRowNum() == 0) {
+//                // Ignore header
+//                continue;
+//                
+//            }
 
             model prod = new model();
           
@@ -92,7 +92,7 @@ public class importExcel {
                     case COLUMN_INDEX_NAME: {
                                prod.setName(String.valueOf(getCellValue(cell)));
                     }
-
+                 
                     default:{}
                   }
             }
